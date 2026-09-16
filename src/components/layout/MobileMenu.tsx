@@ -38,10 +38,9 @@ export default function MobileMenu({ whatWeDo, onClose }: MobileMenuProps) {
     setTimeout(onClose, 200);
   };
 
-  const rowClass = (delay: number) =>
-    `group flex items-center justify-between border-b border-black/5 py-5 transition-all duration-300 ${
-      visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-    }`;
+  const rowClass = `group flex items-center justify-between border-b border-black/5 py-5 transition-all duration-300 ${
+    visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+  }`;
 
   return (
     <div
@@ -63,7 +62,7 @@ export default function MobileMenu({ whatWeDo, onClose }: MobileMenuProps) {
       </div>
 
       <nav className="flex flex-col px-6 pt-4">
-        <Link to="/" onClick={handleClose} style={{ transitionDelay: "0ms" }} className={rowClass(0)}>
+        <Link to="/" onClick={handleClose} style={{ transitionDelay: "0ms" }} className={rowClass}>
           <span className="text-2xl font-semibold tracking-tight">Home</span>
           <ArrowUpRight size={18} className="text-black/30 group-hover:text-canopy-700 transition-colors" />
         </Link>
@@ -87,7 +86,7 @@ export default function MobileMenu({ whatWeDo, onClose }: MobileMenuProps) {
         </div>
 
         {mainLinks.slice(1).map((item, i) => (
-          <Link key={item.to} to={item.to} onClick={handleClose} style={{ transitionDelay: `${(i + 2) * 40}ms` }} className={rowClass(i + 2)}>
+          <Link key={item.to} to={item.to} onClick={handleClose} style={{ transitionDelay: `${(i + 2) * 40}ms` }} className={rowClass}>
             <span className="text-2xl font-semibold tracking-tight">{item.label}</span>
             <ArrowUpRight size={18} className="text-black/30 group-hover:text-canopy-700 transition-colors" />
           </Link>

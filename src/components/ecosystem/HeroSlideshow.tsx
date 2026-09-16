@@ -26,8 +26,6 @@ export default function HeroSlideshow() {
     };
   }, [index, reducedMotion]);
 
-  const activeSlide = reducedMotion ? heroSlides[0] : heroSlides[index];
-
   return (
     <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl bg-canopy-100 md:aspect-[21/9]">
       {heroSlides.map((slide, i) => {
