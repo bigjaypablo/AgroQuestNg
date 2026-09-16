@@ -1,0 +1,2 @@
+npm install -D tailwindcss@3.4.13 postcss@8.4.47 autoprefixer@10.4.20
+npx tailwindcss init -p
